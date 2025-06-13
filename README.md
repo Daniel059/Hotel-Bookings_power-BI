@@ -1,6 +1,6 @@
 # 🏨 Hotel Bookings Business Intelligence Dashboard – Power BI
 
-![Dashboard Banner](assets/final_final_dashboard)
+![Dashboard Banner](Hotel-Bookings_power-BI/Dashbord_Project_Git/assets/final_final_dashboard.png)
 
 ## 📌 Project Overview
 
