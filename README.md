@@ -1,6 +1,6 @@
 # 🏨 Hotel Bookings Business Intelligence Dashboard – Power BI
 
-![Dashboard Banner](Hotel-Bookings_power-BI/Dashbord_Project_Git/assets/final_final_dashboard.png)
+![Dashboard Banner](Dashbord_Project_Git/Assets/final_final_dashboard.png)
 
 ## 📌 Project Overview
 
@@ -35,10 +35,162 @@ The main objective was to create an interactive dashboard that enables hotel sta
 | **Day Type Bookings** | Weekday vs. weekend trends. |
 | **Monthly Revenue** | Time-series view of revenue peaks and dips. |
 
-> 🖼️ Screenshots:  
-> ![Data Model](assets/data_model.png)  
-> ![DAX Measures](assets/dax_measures.png)  
-> ![Dashboard View](assets/dashboard_overview.png)
+> ## 📸 Screenshots & Visual Explanations
+
+---
+
+### 🧾 Data Loading in Power Query
+
+![Data Loading](Dashbord_Project_Git/Assets/Loading_data.png)
+
+**🔹 Data Loading & Transformation – Power Query Editor**  
+This screenshot shows the initial data import and transformation phase in Power BI using Power Query Editor. Datasets such as `fact_bookings.csv`, `fact_aggregated_bookings.csv`, `dim_date.csv`, `dim_hotels.csv`, and `dim_rooms.csv` were loaded. Columns were renamed for clarity, data types corrected (e.g., date fields), and additional time-based columns such as Year, Month, and Weekday were created for better temporal analysis.
+
+---
+
+### 🧩 Data Model – Star Schema
+
+![Data Model](Dashbord_Project_Git/Assets/star_Schema.png)
+
+**🔹 Star Schema Data Model**  
+The data model follows a **star schema** design, optimized for reporting. At the center is the `fact_bookings`,`fact_aggregate_booking` tables, connected to dimension tables including `dim_date`, `dim_hotels`, and `dim_rooms`. The model supports:
+This structure enables efficient querying and supports flexible, high-performance reporting.
+
+---
+
+### 🧮 DAX Measures and Calculated Columns
+
+![Average Rating Measure](Dashbord_Project_Git/Assets/Average_rating_measure.png)
+![Total Capacity Measure](Dashbord_Project_Git/Assets/Total_Capacity_Measure.png)
+![Total Successful Booking Measure](Dashbord_Project_Git/Assets/Total_Succesful_booking_ms.png)
+![Total Booking Measure](Dashbord_Project_Git/Assets/Total_bokking_Measure.png)
+![Cancellation % Measure](Dashbord_Project_Git/Assets/cancellation_%_ms.png)
+![Day Type Measure](Dashbord_Project_Git/Assets/day_type_measure.png)
+![No-Show Rate % Measure](Dashbord_Project_Git/Assets/no_show_rate_%_ms.png)
+![Revenue Measure](Dashbord_Project_Git/Assets/revenue_measure.png)
+![Total Cancelled Booking Measure](Dashbord_Project_Git/Assets/total_Cancelled_Booking_ms.png)
+![Total Checked Out Measure](Dashbord_Project_Git/Assets/total_Checked_out.png)
+![Total No Show Measure](Dashbord_Project_Git/Assets/total_No_Show_ms.png)
+
+## 📊 Power BI Measures and Calculations
+
+
+Custom DAX expressions were created to enhance the analytical capability of the Power BI model. Below is a consolidated list of key DAX measures and calculated columns used:
+
+
+-- 📅 Time Intelligence
+wn = WEEKNUM(dim_date[date]) 
+
+day type =
+Var wkd = WEEKDAY(dim_date[date],1) 
+return
+IF(
+wkd>5,"Weekend","Weekday") 
+
+-- 💰 Revenue & Booking Performance
+Revenue = SUM(fact_bookings[revenue_realized]) 
+
+Total Bookings = COUNT(fact_bookings[booking_id]) 
+
+Total Capacity = SUM(fact_aggregated_bookings[capacity]) 
+
+Total Succesful Bookings = SUM(fact_aggregated_bookings[successful_bookings]) 
+
+Cancellation % = DIVIDE([Total cancelled bookings],[Total Bookings]) 
+
+No Show rate % = DIVIDE([Total no show bookings],[Total Bookings]) 
+
+Total cancelled bookings = CALCULATE([Total Bookings],fact_bookings[booking_status]="Cancelled") 
+
+Total Checked Out = CALCULATE([Total Bookings],fact_bookings[booking_status]="Checked Out") 
+
+-- ⭐ Customer Insights
+Average Rating = AVERAGE(fact_bookings[ratings_given])
+
+---
+
+### 📊 Dashboard Overview
+
+![Dashboard Overview](assets/dashboard_overview.png)
+
+## 📊 Full Dashboard Overview
+
+# 📊 Full Dashboard Overview
+
+## Executive Summary
+
+This dashboard provides a comprehensive overview of our hospitality business performance across key metrics: revenue, occupancy, bookings, cancellations, and customer satisfaction. It is designed to help stakeholders quickly understand trends, identify areas for improvement, and make data-driven decisions.
+
+---
+
+## Key Metrics at a Glance
+
+| Metric                     | Value/Observation             |
+|----------------------------|------------------------------|
+| **Total Revenue**          | 1.71 billion                 |
+| **Total Bookings**         | 134,590                      |
+| **Total Capacity**         | 232,576                      |
+| **Average Rating**         | 3.62                         |
+| **Top Cities by Revenue**  | Delhi, Hyderabad             |
+| **Highest Rated Property** | Atliq Blu (Bangalore, 4.38)  |
+| **Avg. Cancellation Rate** | ~24.75%                      |
+| **No-Show (Business)**     | 4K (63.38%)                  |
+| **No-Show (Luxury)**       | 2K (36.62%)                  |
+
+---
+
+## Dashboard Sections Explained
+
+### 1. **Revenue Performance**
+- **What it shows:** Total revenue generated across all properties and cities.
+- **Why it matters:** Indicates the financial health and growth trajectory of our portfolio.
+
+### 2. **Occupancy & Booking Trends**
+- **What it shows:** Breakdown of bookings and occupancy rates by Business and Luxury segments.
+- **Why it matters:** Helps us understand demand patterns and optimize our offerings.
+
+### 3. **Cancellation & No-Show Analysis**
+- **What it shows:** Cancellation rates by city and segment, and no-show statistics.
+- **Why it matters:** Highlights potential revenue leakage and areas for process improvement.
+
+### 4. **City & Property Performance**
+- **What it shows:** Revenue, bookings, and ratings by city and property.
+- **Why it matters:** Identifies top and underperforming locations for targeted action.
+
+### 5. **Customer Satisfaction**
+- **What it shows:** Average ratings and feedback trends.
+- **Why it matters:** Directly impacts brand reputation and repeat business.
+
+### 6. **Time-Based Filtering**
+- **What it shows:** Ability to filter data by week or month.
+- **Why it matters:** Enables tracking of seasonal trends and campaign effectiveness.
+
+---
+
+## Actionable Insights
+
+- **Reduce Cancellations:** Focus on cities with higher cancellation rates to improve revenue retention.
+- **Enhance Guest Experience:** Prioritize service improvements at lower-rated properties.
+- **Address No-Shows in Business Segment:** Implement strategies such as reminders or flexible policies.
+- **Leverage Best Practices:** Replicate successful tactics from top-performing properties across the network.
+
+---
+
+
+---
+
+*This dashboard is a living tool—please share your feedback or requests for additional insights!*
+
+---
+
+### ☁️ Dashboard Publishing Confirmation
+
+![Published Dashboard](Dashbord_Project_Git/Assets/final_final_dashboard.png)
+
+**🔗 Published Dashboard**  
+The final dashboard was published to Power BI Service and configured for public access. This screenshot confirms the dashboard's availability for external viewing, making it accessible via the shared link and suitable for integration into a professional data portfolio.
+
+---
 
 ---
 
@@ -54,8 +206,18 @@ The main objective was to create an interactive dashboard that enables hotel sta
 
 ## 🔗 Dashboard Link
 
-View the published dashboard here:  
-🌐 [Power BI Public Report](https://app.powerbi.com/groups/me/reports/d95a35de-d5c4-4d67-b77d-038a1f8f0a10/90da962ccb3a4f1211ef?experience=power-bi)
+# 📊 Power BI Dashboard Now Live!
+
+Explore our interactive data visualization:  
+[![Power BI](https://img.icons8.com/color/48/000000/power-bi.png)](https://app.powerbi.com/groups/me/reports/d95a35de-d5c4-4d67-b77d-038a1f8f0a10/90da962ccb3a4f1211ef?experience=power-bi) **| [View the Dashboard →](https://app.powerbi.com/groups/me/reports/d95a35de-d5c4-4d67-b77d-038a1f8f0a10/90da962ccb3a4f1211ef?experience=power-bi)**
+
+✨ Features:
+- Real-time data analytics
+- Interactive visualizations
+- Mobile-responsive design
+- Custom business insights
+
+*Data tells the story - discover yours today!*
 
 ---
 
