@@ -217,11 +217,27 @@ Explore our interactive data visualization:**| [View the Dashboard →](https://
 
 ---
 
-## 📄 Report
+# 🔍 Power BI Dashboard Project
 
-The full assignment report (PDF) is available in the `documentation/` folder.
+[![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
 
-📄 [Daniel_Nzioki_Musyoka_Week4_Power_Bi.pdf](documentation/Daniel_Nzioki_Musyoka_Week4_Power_Bi.pdf)
+## 📦 Get the Dashboard
+
+([Dashbord_Project_Git/Week4_Power_BI.pbix](https://github.com/Daniel059/Hotel-Bookings_power-BI/blob/main/Dashbord_Project_Git/Week4_Power_BI.pbix))
+
+### 🛠️ How to Use
+1. **Download** the `.pbix` file above
+2. **Open** in [Power BI Desktop](https://aka.ms/pbidesktop) (free)
+3. **Refresh** data connections if needed
+4. **Explore** interactive visuals
+
+✨ **Pro Tip:** Customize with your own data!
+
+## 🌟 Features
+- Interactive reports & bookmarks
+- Dynamic DAX measures
+- Mobile-responsive layout
+- Theme customization
 
 ---
 
