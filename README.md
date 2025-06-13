@@ -229,7 +229,7 @@ The full assignment report (PDF) is available in the `documentation/` folder.
 
 **Daniel Nzioki Musyoka**  
 Connect with me on [LinkedIn](https://linkedin.com/in/your-profile)  
-Visit my [Portfolio Website](https://daniel059.github.io/Musyoka_Daniel_Portfolio/Portfolio/)
+Visit my [Portfolio Website](Dashbord_Project_Git/Documentation/Daniel_Nzioki_Musyoka_Week4_Power_Bi.pdf)
 
 ---
 
