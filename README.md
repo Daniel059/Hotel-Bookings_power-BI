@@ -111,11 +111,8 @@ Average Rating = AVERAGE(fact_bookings[ratings_given])
 
 ### 📊 Dashboard Overview
 
-![Dashboard Overview](assets/dashboard_overview.png)
+![Dashboard Overview](Dashbord_Project_Git/Assets/final_final_dashboard.png)
 
-## 📊 Full Dashboard Overview
-
-# 📊 Full Dashboard Overview
 
 ## Executive Summary
 
