@@ -205,8 +205,7 @@ The final dashboard was published to Power BI Service and configured for public 
 
 # 📊 Power BI Dashboard Now Live!
 
-Explore our interactive data visualization:  
-[![Power BI](https://img.icons8.com/color/48/000000/power-bi.png)](https://app.powerbi.com/groups/me/reports/d95a35de-d5c4-4d67-b77d-038a1f8f0a10/90da962ccb3a4f1211ef?experience=power-bi) **| [View the Dashboard →](https://app.powerbi.com/groups/me/reports/d95a35de-d5c4-4d67-b77d-038a1f8f0a10/90da962ccb3a4f1211ef?experience=power-bi)**
+Explore our interactive data visualization:**| [View the Dashboard →](https://app.powerbi.com/groups/me/reports/d95a35de-d5c4-4d67-b77d-038a1f8f0a10/90da962ccb3a4f1211ef?experience=power-bi)**
 
 ✨ Features:
 - Real-time data analytics
